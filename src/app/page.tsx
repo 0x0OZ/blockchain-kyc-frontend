@@ -1,94 +1,63 @@
-import { Account } from '../components/Account'
-import { Balance } from '../components/Balance'
-import { BlockNumber } from '../components/BlockNumber'
-import { ConnectKitButton } from '../components/ConnectKitButton'
-import { Connected } from '../components/Connected'
-import { NetworkSwitcher } from '../components/NetworkSwitcher'
-import { ReadContract } from '../components/ReadContract'
-import { ReadContracts } from '../components/ReadContracts'
-import { ReadContractsInfinite } from '../components/ReadContractsInfinite'
-import { SendTransaction } from '../components/SendTransaction'
-import { SendTransactionPrepared } from '../components/SendTransactionPrepared'
-import { SignMessage } from '../components/SignMessage'
-import { SignTypedData } from '../components/SignTypedData'
-import { Token } from '../components/Token'
-import { WatchContractEvents } from '../components/WatchContractEvents'
-import { WatchPendingTransactions } from '../components/WatchPendingTransactions'
-import { WriteContract } from '../components/WriteContract'
-import { WriteContractPrepared } from '../components/WriteContractPrepared'
+import { KycSteps } from '../components/KycSteps'
+import Header from '../components/Header'
+import LeftSide from '../components/LeftSide'
+import RightSide from '../components/RightSide'
+
+function MainContent() {
+  return (
+    <div className="text-indigo-300 flex antialiased flex-col items-center leading-relaxed w-full h-screen p-20 pt-6 ">
+
+      <h1 className='text-2xl text-white'>KYC?</h1>
+      <p>
+        The is a solution for Pseudonymity in blockchains, Where no Pseudonymous could scam you anymore.
+      </p>
+      <p>
+        You can finally be sure about the identity of pseudonymous client without having to speculate that he is not Laying.
+      </p>
+      <hr className='w-full p-3' />
+      <p>
+        <span className='text-yellow-300'>Note</span>: the KYC process is a multi-step process (three step) to reduce the impact of any possible flows In the system.
+      </p>
+      <p>
+        <span className='text-red-500'>Important</span>: You must follow the order of the steps here, Otherwise you can't connect your social account with your crypto wallet.
+      </p>
+      <hr className='w-full p-3' />
+      <h2 className='text-xl text-white'>How does it work?</h2>
+      <div className="flex flex-col w-full h-full p-10 bg-neutral-900 rounded-lg shadow-lg">
+
+        <p>
+          First You or Anyone who wants to proof his identity to other parties request a KYC verification through one of the currently supported social media platforms. New platforms can be added at Anytime.
+        </p>
+        <br />
+        <p>
+
+          After Authenticating you through the social media platform to proof ownership of the account, The server will store your username for the onchain Oracles to query them
+        </p>
+        <br />
+        <p>
+          Now you will request a KYC verification for your social account through the smart contracts, which will trigger the oracle contracts to request our API for the account ownership proof to prevent anyone from pretending to be you.
+        </p>
+        <br />
+        We are finally there, in the last step you will again interact with the contracts after waiting the oracles to do their work.. But this time you will do a Verification instead of request which will immeditally connect your social account with your crypto wallet.
+      </div>
+      <hr className='w-full p-3' />
+      <div>
+        <KycSteps />
+      </div>
+    </div >
+  )
+}
 
 export function Page() {
   return (
     <>
-      <h1>wagmi + ConnectKit + Next.js</h1>
-
-      <ConnectKitButton />
-
-      <Connected>
-        <hr />
-        <h2>Network</h2>
-        <NetworkSwitcher />
-        <br />
-        <hr />
-        <h2>Account</h2>
-        <Account />
-        <br />
-        <hr />
-        <h2>Balance</h2>
-        <Balance />
-        <br />
-        <hr />
-        <h2>Block Number</h2>
-        <BlockNumber />
-        <br />
-        <hr />
-        <h2>Read Contract</h2>
-        <ReadContract />
-        <br />
-        <hr />
-        <h2>Read Contracts</h2>
-        <ReadContracts />
-        <br />
-        <hr />
-        <h2>Read Contracts Infinite</h2>
-        <ReadContractsInfinite />
-        <br />
-        <hr />
-        <h2>Send Transaction</h2>
-        <SendTransaction />
-        <br />
-        <hr />
-        <h2>Send Transaction (Prepared)</h2>
-        <SendTransactionPrepared />
-        <br />
-        <hr />
-        <h2>Sign Message</h2>
-        <SignMessage />
-        <br />
-        <hr />
-        <h2>Sign Typed Data</h2>
-        <SignTypedData />
-        <br />
-        <hr />
-        <h2>Token</h2>
-        <Token />
-        <br />
-        <hr />
-        <h2>Watch Contract Events</h2>
-        <WatchContractEvents />
-        <br />
-        <hr />
-        <h2>Watch Pending Transactions</h2>
-        <WatchPendingTransactions />
-        <br />
-        <hr />
-        <h2>Write Contract</h2>
-        <WriteContract />
-        <br />
-        <hr />
-        <h2>Write Contract (Prepared)</h2>
-        <WriteContractPrepared />
-      </Connected>
+      <Header />
+      <div className="">
+        <div className="flex flex-row flex-1 ">
+          <LeftSide />
+          <MainContent />
+        </div>
+      </div>
     </>
   )
 }

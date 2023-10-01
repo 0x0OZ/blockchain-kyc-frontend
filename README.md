@@ -1,3 +1,7 @@
+# Blockchain-KYC Frontend
+
+The user interface to interact with the backend server and the contracts, stands behind a reverse proxy.
+
 This is a [wagmi](https://wagmi.sh) + [ConnectKit](https://docs.family.co/connectkit) + [Next.js](https://nextjs.org) project bootstrapped with [`create-wagmi`](https://github.com/wagmi-dev/wagmi/tree/main/packages/create-wagmi)
 
 # Getting Started

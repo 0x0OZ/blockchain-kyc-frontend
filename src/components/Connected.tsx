@@ -8,3 +8,10 @@ export function Connected({ children }: { children: React.ReactNode }) {
   if (!isConnected) return null
   return <>{children}</>
 }
+
+export function NotConnected({ children }: { children: React.ReactNode }) {
+  const { isConnected } = useAccount()
+
+  if (isConnected) return null
+  return <>{children}</>
+}
