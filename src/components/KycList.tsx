@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function KycList() {
     return (
         <ul className='list-disc'>
@@ -10,7 +12,7 @@ export default function KycList() {
 function GenerateKycItem({ ItemName }: any) {
     return (
         <li className='text-blue-600 visited:text-purple-600'>
-            <a href={`/auth/${ItemName.toLowerCase()}`}>{ItemName}</a>
+            <Link href={`/auth/${ItemName.toLowerCase()}`}> {ItemName}</Link>
         </li>
     )
 }

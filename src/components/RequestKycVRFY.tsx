@@ -4,7 +4,7 @@ import { BaseError } from 'viem'
 import { useContractWrite, useWaitForTransaction } from 'wagmi'
 import { kycContractConfig } from './contracts'
 import { stringify } from '../utils/stringify'
-import { GetUserAddress, GetUserName } from './KycSteps';
+import { GetUserName } from './KycSteps';
 
 export function RequestKycVRFY() {
   const { write, data, error, isLoading, isError } = useContractWrite({
@@ -19,12 +19,10 @@ export function RequestKycVRFY() {
 
   return (
     <>
-      <h3>Request KYC</h3>
       <form
         onSubmit={async (e) => {
           e.preventDefault()
           const userHandle: string = await GetUserName();
-          console.log(`userHandle: ${userHandle}`)
           if (!userHandle) {
             alert("Please Authorize you account first");
             return;
@@ -32,12 +30,12 @@ export function RequestKycVRFY() {
 
           write({
             args: [userHandle],
-            value: BigInt(1000000000000000000),
+            value: BigInt(10000000000000000),
           })
         }}
       >
 
-        <button disabled={isLoading} type="submit">
+<button disabled={isLoading} type="submit" className="text-neutral-200 bg-zinc-700	p-2 rounded-md">
           Request KYC Verification
         </button>
       </form>

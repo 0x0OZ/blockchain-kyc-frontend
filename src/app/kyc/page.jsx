@@ -1,7 +1,6 @@
 import { KycSteps } from "../../components/KycSteps"
 import Header  from "../../components/Header"
 import  LeftSide  from "../../components/LeftSide"
-import RightSide  from "../../components/RightSide"
 
 export default function KycProcess() {
     function MainContent() {
@@ -17,7 +16,6 @@ export default function KycProcess() {
         <div className="flex flex-row flex-1 ">
           <LeftSide />
           <MainContent />
-          <RightSide />
         </div>
       </div>
     )

@@ -4,38 +4,8 @@ import { Connected, NotConnected } from './Connected'
 import { ConnectKitButton } from './ConnectKitButton'
 import {RequestKycVRFY} from './RequestKycVRFY'
 import {KyCVerify} from './KycVerify'
-// import { WagmiConfig, createConfig } from 'wagmi'
-// import { createPublicClient, http } from 'viem'
-// import { localhost, mainnet } from '@wagmi/core/chains'
-// import { useAccount, useConnect, useDisconnect } from 'wagmi'
-// import { InjectedConnector } from 'wagmi/connectors/injected'
-// const config = createConfig({
-//     autoConnect: true,
-//     publicClient: createPublicClient({
-//         // chain: mainnet,
-//         chain: localhost,
-//         transport: http()
-//     }),
-// })
-// function Profile() {
-//     const { address, isConnected } = useAccount()
-//     const { connect } = useConnect({
-//         connector: new InjectedConnector(),
-//     })
-//     const { disconnect } = useDisconnect()
-
-//     if (isConnected)
-//         return (
-//             <div>
-//                 Connected to {address}
-//                 {/* <button onClick={() => disconnect()}>Disconnect</button> */}
-//             </div>
-//         )
-//     return <button className="bg-cyan-950 border-4 border-zinc-400 p-2" onClick={() => connect()}>Connect Wallet</button>
-// }
 
 // currently vulnerable to CSRF, mitigated probably?
-
 function SubmitAccountAddress() {
     let addressInput = document.getElementById('userAddress') as HTMLInputElement;
     if (!addressInput) {
@@ -55,12 +25,6 @@ function SubmitAccountAddress() {
         body: JSON.stringify({ crypto_address: address }),
     })
     alert('Address Submitted')
-}
-
-export async function GetUserAddress() {
-    const response = await fetch('/kyc/getAddress')
-    const data = await response.text()
-    return data
 }
 
 export async function GetUserName() {

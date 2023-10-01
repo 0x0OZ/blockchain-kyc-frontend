@@ -19,7 +19,7 @@ export function KyCVerify() {
 
   return (
     <>
-      <h3>Request KYC</h3>
+      <h3>Before verifying wait around 12 seconds after the previous transaction is confirmed, you can drink some coffee in that time</h3>
       <form
         onSubmit={async (e) => {
           e.preventDefault()
@@ -27,8 +27,8 @@ export function KyCVerify() {
         }}
       >
 
-        <button disabled={isLoading} type="submit">
-          Request KYC Verification
+<button disabled={isLoading} type="submit" className="text-neutral-200 bg-zinc-700	p-2 rounded-md">
+          Verify KYC
         </button>
       </form>
 

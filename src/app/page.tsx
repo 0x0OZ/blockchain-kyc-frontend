@@ -1,7 +1,6 @@
 import { KycSteps } from '../components/KycSteps'
 import Header from '../components/Header'
 import LeftSide from '../components/LeftSide'
-import RightSide from '../components/RightSide'
 
 function MainContent() {
   return (
