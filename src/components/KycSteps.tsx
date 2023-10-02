@@ -36,7 +36,7 @@ export async function GetUserName() {
 export function KycSteps() {
     return (
         <div className="flex flex-col items-center justify-center m-2">
-            <h2 className='text-xl text-white'>Let's prove your Identity</h2>
+            <h2 className='text-xl text-white'>Lets prove your Identity</h2>
             <p>First choose one of the following verification methods</p>
             <KycList />
             <hr className="border-white w-full" />
