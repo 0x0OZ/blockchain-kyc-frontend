@@ -27,7 +27,7 @@ export function KyCVerify() {
         }}
       >
 
-<button disabled={isLoading} type="submit" className="text-neutral-200 bg-zinc-700	p-2 rounded-md">
+        <button disabled={isLoading} type="submit" className="text-neutral-200 bg-zinc-700	p-2 rounded-md">
           Verify KYC
         </button>
       </form>
@@ -35,12 +35,7 @@ export function KyCVerify() {
       {isLoading && <div>Check wallet...</div>}
       {isPending && <div>Transaction pending...</div>}
       {isSuccess && (
-        <>
-          <div>Transaction Hash: {data?.hash}</div>
-          <div>
-            Transaction Receipt: <pre>{stringify(receipt, null, 2)}</pre>
-          </div>
-        </>
+        <div>Transaction Hash: {data?.hash}</div>
       )}
       {isError && <div>{(error as BaseError)?.shortMessage}</div>}
     </>
