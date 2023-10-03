@@ -3,7 +3,6 @@
 import { BaseError } from 'viem'
 import { useContractWrite, useWaitForTransaction } from 'wagmi'
 import { kycContractConfig } from './contracts'
-import { stringify } from '../utils/stringify'
 
 export function KyCVerify() {
   const { write, data, error, isLoading, isError } = useContractWrite({

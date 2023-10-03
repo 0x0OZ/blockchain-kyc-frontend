@@ -1,14 +1,18 @@
 import { getDefaultConfig } from 'connectkit'
 import { createConfig, configureChains } from 'wagmi'
 import {
-  avalanche,
-  celo,
-  cronos,
-  fantom,
-  polygon,
-  bsc,
-  metis,
-  harmonyOne,
+  // avalanche,
+  // celo,
+  // cronos,
+  // fantom,
+  // polygon,
+  // bsc,
+  // metis,
+  // harmonyOne,
+  optimism,
+  mainnet,
+  sepolia,
+  // optimismGoerli
 } from "wagmi/chains";
 const walletConnectProjectId: string = process.env.WALLET_CONNECT_PROJECT_ID || '';
 import { publicProvider } from "wagmi/providers/public";
@@ -37,10 +41,10 @@ export const localhost = {
 
   },
 } as const satisfies Chain
-// End of LOCAL NETWORK CONF
+
 
 const { chains } = configureChains(
-  [avalanche, celo, cronos, fantom, polygon, bsc, metis, harmonyOne, localhost],
+  [sepolia, localhost, mainnet, optimism],
   [publicProvider()]
 );
 
@@ -49,8 +53,8 @@ export const config = createConfig(
     autoConnect: true,
     appName: "Blockchain-Kyc",
     appDescription: "non-governmental kyc for crypto addresses",
-    appUrl: "https://cryptolink.app",
-    appIcon: "https://cryptolink.tech/images/cryptolink-logo2.png",
+    appUrl: "/",
+    appIcon: "https://m.economictimes.com/thumb/msid-70878368,width-1200,height-900,resizemode-4,imgsize-60059/kyc-getty.jpg",
     chains,
     walletConnectProjectId,
   })
